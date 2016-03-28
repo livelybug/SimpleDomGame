@@ -49,12 +49,23 @@ function colorBuild(colorNum) {
 }
 
 function gameBuild(sqrNum) {
-	//console.log("gameBuild");
 	var content = "";
 
-	for(var i = 0; i < sqrNum ; i++) {
-		content = content.concat("<div class=\"square\"></div>");
+	// None responsive version
+	// for(var i = 0; i < sqrNum ; i++) {
+	// 	content = content.concat("<div class=\"square\"></div>");
+	// }
+
+
+	content = content.concat("<div class=\"row\">");
+	for(var j = 0; j < sqrNum ; j++) {
+		content = content.concat("<div class=\"col-md-4 col-sm-4 col-xs-6\">");
+		content = content.concat("<div class=\"thumbnail_container\">");
+		content = content.concat("<div class=\"square\">");
+		content = content.concat("<img/> </div> </div> </div>");
 	}
+
+	content = content.concat("</div>");
 
 	sqrContainer.innerHTML = content;
 	colorBuild(sqrNum);
